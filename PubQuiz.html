@@ -1,0 +1,73 @@
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="PubQuiz.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <body class="w3-light-grey">
+
+
+    <!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+    <div class="w3-content" style="max-width:800px">
+
+      <!-- Blog entries -->
+      <div class>
+        <!-- Blog entry -->
+        <div class="w3-white w3-margin w3-card">
+          <img src="PubQuiz.png" alt="Nature" style="width:100%">
+
+          <div id="resultPage" style="display: none;">
+            <br>
+            <p class=gameoverfont> Thank you for playing </p><br>
+            <p id="finishThisLevel"> You have finished this level! You can go to next level!</p>
+            <h1 id="gameover">GAME OVER</h1><br><br>
+            <button id="restart" type="button" class="button" onclick="restart()">Restart</button><br>
+            <button id="nextLevel" type="button" class="button" onclick="nextLevelFN()">Next Level</button><br>
+            <br>
+            <div id="prizegameover"></div>
+          </div>
+
+          <div id="questionPage">
+            <div class="w3-container w3-light-grey">
+              <p>Welcome to Pub Quiz! You are going to answer 10 questions in each level, and you have 20 seconds for each question. You have one opportunity to use Lifeline to delete two incorrect answers. When prize below 900, you will get 300 pounds from
+                each question but the prize will be withdrawn if you fail to answer three questions. Alternatively, the prize will be multiplied. You can also give up the game and take the prize. Good Luck! </p>
+            </div>
+
+            <br>
+            <h1>
+              <p id="questionNumber"></p>
+            </h1>
+            <h3>
+              <p id="question"></p>
+            </h3>
+            <form action="">
+              <input id="answer1" name="options" type="radio"><label for="answer1"></label><br>
+              <input id="answer2" name="options" type="radio"><label for="answer2"></label><br>
+              <input id="answer3" name="options" type="radio"><label for="answer3"></label><br>
+              <input id="answer4" name="options" type="radio"><label for="answer4"></label><br><br>
+              <br>
+              <button class="button" type="button" onclick="confirmAnswer()">Confirm </button>
+              <button id="giveUpButton" class="button" type="button" onclick="giveUp()"> GIVE UP AND TAKE THE PRIZE </button>
+              <button id="Lifeline" class="button" type="button" onclick="LifelineFN()"> Lifeline</button>
+              <p class="Timer"></p>
+            </form>
+            <p id="mistakeTimes"></p>
+            <button id="giveUpButton" type="button" onclick="giveUp()" style="display: none;"> GIVE UP AND TAKE THE PRIZE </button>
+            <div id="showMistakeTime"></div>
+            <div id="prize"></div>
+
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+
+    <footer class="w3-container  w3-padding-32 w3-margin-top"></footer>
+
+  </body>
+
+</html>
